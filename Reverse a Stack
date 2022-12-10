@@ -1,0 +1,19 @@
+#include<stack>
+void reverseStack(stack<int> &input, stack<int> &extra) {
+    if(input.empty()){
+        return ;
+    }
+    while(!input.empty()){
+        extra.push(input.top());
+        input.pop();
+    }
+    while(!extra.empty()){
+        cout<<extra.top()<<" ";
+        extra.pop();
+    }
+
+
+
+    
+     
+}
