@@ -1,0 +1,30 @@
+#include<stack>
+int countBracketReversals(string input) {
+	 
+	stack<char> temp;
+	if(input.length()%2!=0){
+		return -1;
+	}
+
+	int ans =0;
+
+	for(int i=0; i<input.size(); i++){
+		if(input[i]=='{'){
+			temp.push(input[i]);
+		}
+
+		else{
+			if(!temp.empty()){
+				temp.pop();
+			}
+
+			else{
+				temp.push('{');
+				ans++;
+			}
+		}
+	}
+	ans += temp.size()/2;
+	return ans ;
+
+}
